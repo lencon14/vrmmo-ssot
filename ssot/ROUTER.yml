@@ -1,0 +1,11 @@
+version: 1
+default_read:
+  - ssot/ops/0000_constitution.md
+  - ssot/dict/8100_terms_control.md
+
+routes:
+  - intent: "ssot_governance"
+    triggers: ["運用", "憲法", "採番", "参照", "禁止", "例外", "整合性", "ドリフト"]
+    read:
+      - ssot/ops/0000_constitution.md
+      - ssot/ops/0031_lint_rules.md

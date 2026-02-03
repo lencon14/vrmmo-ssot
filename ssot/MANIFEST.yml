@@ -1,0 +1,16 @@
+version: 1
+files:
+  - path: "ssot/ROUTER.yml"
+    domain: "META"
+    title: "意図→参照ファイルのルータ"
+    keywords: ["router", "intent", "triggers", "default_read"]
+
+  - path: "ssot/MANIFEST.yml"
+    domain: "META"
+    title: "全ファイル台帳"
+    keywords: ["manifest", "files", "keywords"]
+
+  - path: "ssot/ops/0000_constitution.md"
+    domain: "OPS"
+    title: "憲法（North Star / 参照 / 変更フロー）"
+    keywords: ["north star", "ssot", "参照", "採番", "禁止", "例外"]
