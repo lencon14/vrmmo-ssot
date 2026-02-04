@@ -1,0 +1,38 @@
+name: ssot-issues-gate
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened]
+  workflow_dispatch:
+
+permissions:
+  issues: read
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce ssot status:doing == 0
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          repo="lencon14/vrmmo-ssot"
+          label_q="status%3Adoing"
+
+          url="https://api.github.com/repos/${repo}/issues?state=open&labels=${label_q}&per_page=100"
+          data="$(curl -fsSL \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "${url}")"
+
+          count="$(echo "$data" | jq '[.[] | select(.pull_request == null)] | length')"
+          echo "ssot status:doing open issues = ${count}"
+
+          if [ "$count" -ne 0 ]; then
+            echo "::error::SSOT issues gate failed: require ssot=0 (status:doing)."
+            exit 1
+          fi
