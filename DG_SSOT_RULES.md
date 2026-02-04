@@ -15,3 +15,6 @@ https://github.com/lencon14/vrmmo-novel/issues/NUMBER
 
 ## Forbidden
 - status:doing is forbidden in this repo.
+
+## Guardrail timing note
+- After adding a forbidden label (status:doing) or status:next without a novel link, wait 30 seconds and re-check labels/comments. Immediate checks may catch the workflow mid-run.
