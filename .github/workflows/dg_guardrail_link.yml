@@ -1,0 +1,59 @@
+name: DG Guardrail (enforce link for status:next, forbid status:doing)
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, reopened]
+
+permissions:
+  issues: write
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce rules
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          repo="lencon14/vrmmo-ssot"
+          novel_repo="lencon14/vrmmo-novel"
+          issue_number="${{ github.event.issue.number }}"
+
+          json=$(gh api "repos/${repo}/issues/${issue_number}")
+          body=$(echo "$json" | jq -r '.body // ""')
+          labels=$(echo "$json" | jq -r '.labels[].name')
+
+          has_label () { echo "$labels" | grep -qx "$1"; }
+
+          urlencode () {
+            python3 - <<PY
+import urllib.parse, sys
+print(urllib.parse.quote(sys.argv[1]))
+PY
+          }
+
+          remove_label () {
+            label="$1"
+            esc=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$label'''))")
+            gh api -X DELETE "repos/${repo}/issues/${issue_number}/labels/${esc}" >/dev/null 2>&1 || true
+          }
+
+          comment () {
+            msg="$1"
+            gh api -X POST "repos/${repo}/issues/${issue_number}/comments" -f body="$msg" >/dev/null
+          }
+
+          # 1) forbid status:doing in ssot
+          if has_label "status:doing"; then
+            remove_label "status:doing"
+            comment "DG Guardrail: status:doing is forbidden in vrmmo-ssot. Doing is managed in https://github.com/${novel_repo}/issues (status:doing max 1)."
+          fi
+
+          # 2) enforce novel doing link when status:next is applied
+          if has_label "status:next"; then
+            echo "$body" | grep -Eq "https://github\.com/${novel_repo}/issues/[0-9]+" || missing=1
+            if [ "${missing:-0}" = "1" ]; then
+              remove_label "status:next"
+              comment "DG Guardrail: status:next requires a link to the current novel doing issue in the body. Add: https://github.com/${novel_repo}/issues/NUMBER then apply status:next again."
+            fi
+          fi

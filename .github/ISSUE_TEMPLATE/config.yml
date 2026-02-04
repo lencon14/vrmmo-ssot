@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Start Here (Drift-Guard EntryPoint)
+    url: https://lencon14.github.io/vrmmo-novel/DG_ENTRYPOINT.md
+    about: Read this first in a new thread. Canon is locked by SSOT_LOCK.yml in vrmmo-novel.
+  - name: EntryPoint (machine-readable)
+    url: https://lencon14.github.io/vrmmo-novel/DG_ENTRYPOINT.yml
+    about: YAML entrypoint for automated retrieval.
