@@ -1,0 +1,62 @@
+name: DG Guardrail (ssot)
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, reopened]
+
+concurrency:
+  group: dg-guardrail-ssot-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+permissions:
+  issues: write
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce ssot rules
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = 'lencon14';
+            const repo  = 'vrmmo-ssot';
+            const novel = 'lencon14/vrmmo-novel';
+            const issue_number = context.payload.issue.number;
+
+            const issue = await github.rest.issues.get({ owner, repo, issue_number });
+            const body = issue.data.body || '';
+            const labels = (issue.data.labels || []).map(l => (typeof l === 'string' ? l : l.name));
+
+            const has = (name) => labels.includes(name);
+
+            async function removeLabel(name) {
+              await github.rest.issues.removeLabel({ owner, repo, issue_number, name });
+            }
+
+            async function comment(msg) {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body: msg });
+            }
+
+            let did = false;
+
+            // 1) forbid status:doing in ssot
+            if (has('status:doing')) {
+              await removeLabel('status:doing');
+              await comment(`DG Guardrail: status:doing is forbidden in vrmmo-ssot. Doing is managed in https://github.com/${novel}/issues (status:doing max 1).`);
+              did = true;
+            }
+
+            // 2) enforce novel doing link when status:next is applied
+            if (has('status:next')) {
+              const re = new RegExp(`https://github\\.com/${novel}/issues/\\\\d+`);
+              if (!re.test(body)) {
+                await removeLabel('status:next');
+                await comment(`DG Guardrail: status:next requires a link to the current novel doing issue in the body. Add: https://github.com/${novel}/issues/NUMBER then apply status:next again.`);
+                did = true;
+              }
+            }
+
+            if (!did) {
+              core.info('No action needed.');
+            }
