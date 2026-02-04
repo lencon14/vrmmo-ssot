@@ -1,0 +1,32 @@
+name: SSoT Task
+description: SSoT-side task. Doing is managed in vrmmo-novel; do not use status:doing here.
+title: "SSOT: "
+labels: ["area:ssot","kind:task","status:backlog"]
+body:
+  - type: textarea
+    id: intent
+    attributes:
+      label: Intent
+      description: What to change in SSoT repo
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Success
+      description: Observable completion criteria
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: link_to_novel_doing
+    attributes:
+      label: Link to novel doing issue (required when work starts)
+      description: Paste the novel issue URL labeled status:doing that authorizes this work
+    validations:
+      required: false

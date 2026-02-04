@@ -1,0 +1,23 @@
+name: DG Guardrail (no doing in ssot)
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened]
+
+permissions:
+  issues: read
+
+jobs:
+  no-doing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any open status:doing exists in ssot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          count=$(gh issue list --repo lencon14/vrmmo-ssot --label "status:doing" --state open --json number --jq 'length')
+          echo "doing_count=$count"
+          if [ "$count" -gt 0 ]; then
+            echo "ERROR: vrmmo-ssot must have 0 open issues labeled status:doing. Doing is managed in vrmmo-novel."
+            exit 1
+          fi
