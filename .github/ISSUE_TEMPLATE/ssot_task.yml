@@ -30,3 +30,11 @@ body:
       description: Paste the novel issue URL labeled status:doing that authorizes this work
     validations:
       required: false
+  - type: input
+    id: novel_doing
+    attributes:
+      label: novel_doing (required for status:next)
+      description: Paste the URL of the current doing issue in vrmmo-novel (label status:doing must be exactly 1 open).
+      placeholder: https://github.com/lencon14/vrmmo-novel/issues/123
+    validations:
+      required: false
