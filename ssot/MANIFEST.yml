@@ -30,3 +30,8 @@ files:
     domain: "OPS"
     title: "Project Context（経緯・分離・現在モード）"
     keywords: ["context", "rationale", "分離運用", "設定整理"]
+
+  - path: "ssot/ops/0003_change_protocol.md"
+    domain: "OPS"
+    title: "Change Protocol (ssot_organize)"
+    keywords: []
