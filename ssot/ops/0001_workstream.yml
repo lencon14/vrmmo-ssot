@@ -1,0 +1,22 @@
+version: 1
+mode: ssot_organize
+snapshot_policy: snapshot_tag
+
+goals:
+  - establish_workstream_beacon
+  - establish_context_rationale
+  - proceed_to_settings_organization_after_beacon
+
+non_goals:
+  - write_novel_text
+  - decide_new_canon_without_explicit_decision
+
+allowed_actions:
+  - create_index
+  - move_files_for_clarity
+  - split_merge_docs_for_readability
+  - update_router_manifest_to_match_structure
+
+guardrails:
+  - "Unknown/TBD must go to backlog, not canon."
+  - "If user requests novel writing: stop and ask to switch mode."

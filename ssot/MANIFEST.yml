@@ -1,4 +1,5 @@
 version: 1
+
 files:
   - path: "ssot/ROUTER.yml"
     domain: "META"
@@ -14,3 +15,13 @@ files:
     domain: "OPS"
     title: "憲法（North Star / 参照 / 変更フロー）"
     keywords: ["north star", "ssot", "参照", "採番", "禁止", "例外"]
+
+  - path: "ssot/ops/0001_workstream.yml"
+    domain: "OPS"
+    title: "Workstream Beacon（現在モード固定）"
+    keywords: ["workstream", "mode", "設定整理", "drift"]
+
+  - path: "ssot/ops/0002_context.md"
+    domain: "OPS"
+    title: "Project Context（経緯・分離・現在モード）"
+    keywords: ["context", "rationale", "分離運用", "設定整理"]
