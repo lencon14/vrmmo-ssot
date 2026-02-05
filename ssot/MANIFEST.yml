@@ -1,6 +1,11 @@
 version: 1
 
 files:
+
+  - path: "ssot/dict/8100_terms_control.md"
+    domain: "DICT"
+    title: "DICT Terms Control（用語統制：草案）"
+    keywords: []
   - path: "ssot/ROUTER.yml"
     domain: "META"
     title: "意図→参照ファイルのルータ"
