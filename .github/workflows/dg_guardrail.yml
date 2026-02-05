@@ -49,7 +49,7 @@ jobs:
 
             // 2) enforce novel doing link when status:next is applied
             if (has('status:next')) {
-              const re = new RegExp(`https://github\\.com/${novel}/issues/\\\\d+`);
+              const re = new RegExp(`https://github\\.com/${novel}/issues/\\d+`);
               if (!re.test(body)) {
                 await removeLabel('status:next');
                 await comment(`DG Guardrail: status:next requires a link to the current novel doing issue in the body. Add: https://github.com/${novel}/issues/NUMBER then apply status:next again.`);
