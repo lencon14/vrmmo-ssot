@@ -33,3 +33,5 @@ Release a new snapshot tag when changes in vrmmo-ssot must become the new refere
 ## Notes on caching
 - SSOT_LOCK is fetched via raw URLs; CDN staleness may occur.
 - dg_recover.ps1 uses a cachebust query when fetching SSOT_LOCK to ensure fresh reads.
+## Ownership Note
+- Owner: ssot_tag / SSOT_LOCK 更新手順の定義は本書を正とする。

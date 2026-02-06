@@ -12,3 +12,5 @@
 ## 現在の作業モード
 - mode = ssot_organize（設定整理）
 - このモードでは：執筆をしない／新規設定の確定をしない（必要ならBacklog化）
+## Ownership Note
+- Delegation: SSOT_LOCK / ssot_tag の更新手順は ssot/ops/0004_release_protocol.md を正本とする。

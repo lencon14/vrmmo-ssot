@@ -30,3 +30,6 @@ After any change in `vrmmo-ssot` that should be referenced by the novel side:
 1) Cut a new snapshot tag in `vrmmo-ssot`.
 2) Update `vrmmo-novel/SSOT_LOCK.yml@main` to that tag (`ssot_tag`).
 3) `dg_recover.ps1` MUST succeed before continuing.
+## Ownership Note
+- Owner: Issue-first / Adopt-only / status:next の運用定義は本書を正とする。
+- Non-owner: 用語統制（命名/aliases/forbidden など）は ssot/dict/8100_terms_control.md を正とする。
