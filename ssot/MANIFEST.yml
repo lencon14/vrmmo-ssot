@@ -40,3 +40,8 @@ files:
     domain: "OPS"
     title: "Release Protocol (SSoT snapshots)"
     keywords: []
+
+  - path: "ssot/ops/0031_lint_rules.md"
+    domain: "OPS"
+    title: "Lint Rules"
+    keywords: ["lint", "rules"]
