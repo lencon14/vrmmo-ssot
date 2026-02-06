@@ -8,9 +8,53 @@ default_read:
 
 routes:
   - intent: "ssot_governance"
-    triggers: ["運用", "憲法", "採番", "参照", "禁止", "例外", "整合性", "ドリフト", "設定整理", "SSoT整理", "workstream", "経緯"]
+    triggers: ["governance", "constitution", "policy", "north star", "drift-guard", "workstream", "context", "ssot_organize", "adopt-only", "issue-first", "lint"]
     read:
       - ssot/ops/0000_constitution.md
       - ssot/ops/0001_workstream.yml
       - ssot/ops/0002_context.md
       - ssot/ops/0031_lint_rules.md
+
+  - intent: "ssot_meta"
+    triggers: ["meta", "entrypoint", "router", "manifest", "ssot_tag", "SSOT_LOCK", "DG_RECOVER", "reference_lock", "fixed_point", "entry"]
+    read:
+      - ssot/meta/0100_meta_index.md
+      - ssot/ROUTER.yml
+      - ssot/MANIFEST.yml
+      - ssot/ops/0000_constitution.md
+
+  - intent: "ssot_ops"
+    triggers: ["ops", "protocol", "change", "release", "lint", "operation", "procedure", "workflow", "runbook", "governance"]
+    read:
+      - ssot/ops/0100_ops_index.md
+      - ssot/ops/0110_governance_index.md
+      - ssot/ops/0120_protocols_index.md
+      - ssot/ops/0000_constitution.md
+      - ssot/ops/0001_workstream.yml
+      - ssot/ops/0002_context.md
+
+  - intent: "ssot_dict"
+    triggers: ["dict", "terms", "term", "notation", "alias", "deprecated", "naming"]
+    read:
+      - ssot/dict/8000_dict_index.md
+      - ssot/dict/8010_terms_index.md
+      - ssot/dict/8100_terms_control.md
+
+  - intent: "ssot_system"
+    triggers: ["system", "spec", "gameplay", "core pillars", "design", "rules", "mechanic"]
+    read:
+      - ssot/system/1000_system_index.md
+      - ssot/system/spec/1100_system_spec_index.md
+      - ssot/system/spec/core_pillars.md
+
+  - intent: "ssot_char"
+    triggers: ["char", "character", "sheet", "template", "invariants", "consistency", "profile"]
+    read:
+      - ssot/char/1000_char_index.md
+      - ssot/char/templates/character_sheet.md
+      - ssot/char/spec/invariants.md
+
+  - intent: "ssot_registry"
+    triggers: ["registry", "open questions", "unknown", "assumption", "decision", "backlog", "issue"]
+    read:
+      - ssot/registry/open_questions.md
