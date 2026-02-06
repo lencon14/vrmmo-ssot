@@ -1,0 +1,26 @@
+version: 1
+owners:
+  OWN.UNASSIGNED:
+    description: "暫定（未割当）"
+    notes: ["初期移行では全てここに落としてよい。後で細分化する。"]
+
+  OWN.OPS:
+    description: "運用・憲章・プロトコル（ops/*）"
+  OWN.REG:
+    description: "台帳・要件・意思決定記録（registry/*）"
+  OWN.SYS:
+    description: "ゲームシステム（system/*）"
+  OWN.WLD:
+    description: "世界（world/*）"
+  OWN.CHR:
+    description: "キャラクター（char/*）"
+  OWN.ITM:
+    description: "アイテム（item/*）"
+  OWN.LOR:
+    description: "ロア/年代（lore/*）"
+  OWN.DCT:
+    description: "用語統制（dict/*）"
+  OWN.LEG:
+    description: "旧体系・移行（legacy/*）"
+  OWN.META:
+    description: "メタ（MANIFEST/ROUTER 等）"
