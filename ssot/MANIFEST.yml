@@ -1,7 +1,5 @@
 version: 1
-
 files:
-
   - path: "ssot/dict/8100_terms_control.md"
     domain: "DICT"
     title: "DICT Terms Control（用語統制：草案）"
@@ -10,38 +8,48 @@ files:
     domain: "META"
     title: "意図→参照ファイルのルータ"
     keywords: ["router", "intent", "triggers", "default_read"]
-
   - path: "ssot/MANIFEST.yml"
     domain: "META"
     title: "全ファイル台帳"
     keywords: ["manifest", "files", "keywords"]
-
   - path: "ssot/ops/0000_constitution.md"
     domain: "OPS"
     title: "憲法（North Star / 参照 / 変更フロー）"
     keywords: ["north star", "ssot", "参照", "採番", "禁止", "例外"]
-
   - path: "ssot/ops/0001_workstream.yml"
     domain: "OPS"
     title: "Workstream Beacon（現在モード固定）"
     keywords: ["workstream", "mode", "設定整理", "drift"]
-
   - path: "ssot/ops/0002_context.md"
     domain: "OPS"
     title: "Project Context（経緯・分離・現在モード）"
     keywords: ["context", "rationale", "分離運用", "設定整理"]
-
   - path: "ssot/ops/0003_change_protocol.md"
     domain: "OPS"
     title: "Change Protocol (ssot_organize)"
     keywords: []
-
   - path: "ssot/ops/0004_release_protocol.md"
     domain: "OPS"
     title: "Release Protocol (SSoT snapshots)"
     keywords: []
-
   - path: "ssot/ops/0031_lint_rules.md"
     domain: "OPS"
     title: "Lint Rules"
     keywords: ["lint", "rules"]
+
+  - path: "ssot/registry/open_questions.md"
+    domain: "OPS"
+    title: "Open Questions Registry（未確定台帳）"
+    keywords: ["unknowns", "assumptions", "decisions", "open questions", "registry"]
+  - path: "ssot/system/spec/core_pillars.md"
+    domain: "SYSTEM"
+    title: "Gameplay Core Pillars（ゲーム設計の軸）"
+    keywords: ["pillars", "constraints", "gameplay"]
+  - path: "ssot/char/templates/character_sheet.md"
+    domain: "CHAR"
+    title: "Character Sheet Template（キャラ設定テンプレ）"
+    keywords: ["character", "template", "sheet"]
+  - path: "ssot/char/spec/invariants.md"
+    domain: "CHAR"
+    title: "Character Invariants（キャラ不変条件チェック）"
+    keywords: ["character", "invariants", "consistency", "checklist"]
