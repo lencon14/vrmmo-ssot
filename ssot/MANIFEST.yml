@@ -117,3 +117,84 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
+
+  - id: "META.10.001"
+    path: "ssot/meta/0100_meta_index.md"
+    domain: "META"
+    title: "META Index（入口）"
+    keywords: ["index", "entrypoint"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "OPS.10.001"
+    path: "ssot/ops/0100_ops_index.md"
+    domain: "OPS"
+    title: "OPS Index（運用・統制）"
+    keywords: ["index", "ops"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "OPS.11.001"
+    path: "ssot/ops/0110_governance_index.md"
+    domain: "OPS"
+    title: "Governance Index（統制・禁止・参照）"
+    keywords: ["index", "governance", "policy"]
+    status: "active"
+    parent: "OPS.10.001"
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "OPS.12.001"
+    path: "ssot/ops/0120_protocols_index.md"
+    domain: "OPS"
+    title: "Protocols Index（手順）"
+    keywords: ["index", "protocol"]
+    status: "active"
+    parent: "OPS.10.001"
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "DCT.80.001"
+    path: "ssot/dict/8000_dict_index.md"
+    domain: "DCT"
+    title: "DICT Index（用語・命名）"
+    keywords: ["index", "dict", "terms"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "DCT.80.010"
+    path: "ssot/dict/8010_terms_index.md"
+    domain: "DCT"
+    title: "Terms Index（辞書エントリ束ね）"
+    keywords: ["index", "terms", "entries"]
+    status: "active"
+    parent: "DCT.80.001"
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "SYS.10.001"
+    path: "ssot/system/1000_system_index.md"
+    domain: "SYS"
+    title: "SYSTEM Index（ゲーム設計・仕様）"
+    keywords: ["index", "system"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "SYS.11.001"
+    path: "ssot/system/spec/1100_system_spec_index.md"
+    domain: "SYS"
+    title: "System Spec Index（spec 配下）"
+    keywords: ["index", "spec"]
+    status: "active"
+    parent: "SYS.10.001"
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "CHR.10.001"
+    path: "ssot/char/1000_char_index.md"
+    domain: "CHR"
+    title: "CHAR Index（キャラ設定）"
+    keywords: ["index", "char"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
