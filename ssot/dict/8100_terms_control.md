@@ -36,3 +36,8 @@ Issue には最低限これを含める：
 4) snapshot tag を切る
 5) `vrmmo-novel/SSOT_LOCK.yml@main` の `ssot_tag` を更新
 6) `dg_recover.ps1` が `DG_RECOVER: SUCCESS` になるまで進めない
+
+## Ownership Note
+- Owner: 用語統制（命名/aliases/forbidden/canonical）の規則は本書を正とする。
+- Delegation: Issue-first / Adopt-only / status:next は ssot/ops/0003_change_protocol.md を正本とする。
+- Delegation: ssot_tag / SSOT_LOCK 更新は ssot/ops/0004_release_protocol.md を正本とする。
