@@ -22,11 +22,11 @@
 
 # \- 例（表記は概念。実装時に厳密な文法を定義する）：
 
-# &nbsp; - SYS.02.001（戦闘コア）
+#   - SYS.02.001（戦闘コア）
 
-# &nbsp; - SYS.02.01.001（ダメージ詳細）
+#   - SYS.02.01.001（ダメージ詳細）
 
-# &nbsp; - WLD.01.001（勢力・地域）
+#   - WLD.01.001（勢力・地域）
 
 # 
 
@@ -52,13 +52,13 @@
 
 # \- 追加（最低限）：
 
-# &nbsp; - files\[].id
+#   - files\[].id
 
-# &nbsp; - files\[].parent（または parent\_id）
+#   - files\[].parent（または parent\_id）
 
-# &nbsp; - files\[].status（shell|active|legacy|deprecated）
+#   - files\[].status（shell|active|legacy|deprecated）
 
-# &nbsp; - files\[].owner\_ref（ownership正本への参照キー）
+#   - files\[].owner\_ref（ownership正本への参照キー）
 
 # \- 互換性最大化のため、既存の項目（path/domain/title/keywords等）は可能な限り維持する。
 
@@ -130,5 +130,17 @@
 
 # \- 参照は ssot\_tag で固定された内容のみを根拠とする。
 
-# 
+
+
+
+
+# \# \\### D8. MANIFEST `files:` 配列の並び順（PR運用）
+
+# \# \\- PR#28 では diff/衝突最小化のため `files:` の並び替えを行わない（現状順維持：方針D）。
+
+# \# \\- 後続PRでのみ `domain -> path` の複合キーで整列する（方針C）。整列PRは「整列のみ」を目的として他変更を混ぜない。
+
+# \#
+
+
 
