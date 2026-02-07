@@ -19,7 +19,7 @@ files:
     parent: null
     owner_ref: "OWN.UNASSIGNED"
 
-  - id: "META.00.001"
+  - id: "META.00.901"
     path: "ssot/ROUTER.yml"
     domain: "META"
     title: "意図→参照ファイルのルータ"
@@ -27,7 +27,7 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
-  - id: "META.00.002"
+  - id: "META.00.902"
     path: "ssot/MANIFEST.yml"
     domain: "META"
     title: "全ファイル台帳"
@@ -85,7 +85,7 @@ files:
     parent: null
     owner_ref: "OWN.UNASSIGNED"
 
-  - id: "REG.01.001"
+  - id: "REG.01.901"
     path: "ssot/registry/open_questions.md"
     domain: "REG"
     title: "Open Questions Registry（未確定台帳）"
@@ -93,7 +93,7 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
-  - id: "SYS.01.001"
+  - id: "SYS.01.901"
     path: "ssot/system/spec/core_pillars.md"
     domain: "SYS"
     title: "Gameplay Core Pillars（ゲーム設計の軸）"
@@ -101,7 +101,7 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
-  - id: "CHR.01.001"
+  - id: "CHR.01.901"
     path: "ssot/char/templates/character_sheet.md"
     domain: "CHR"
     title: "Character Sheet Template（キャラ設定テンプレ）"
@@ -109,7 +109,7 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
-  - id: "CHR.02.001"
+  - id: "CHR.02.901"
     path: "ssot/char/spec/invariants.md"
     domain: "CHR"
     title: "Character Invariants（キャラ不変条件チェック）"
@@ -117,3 +117,4 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
+
