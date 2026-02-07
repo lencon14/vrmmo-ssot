@@ -9,6 +9,7 @@ id_spec:
     - "ops配下の数値ファイル(0000_...)は leaf=下3桁 を採用"
     - "非数値ファイルは同一カテゴリ内で採番順に leaf を割当（後から挿入しない）"
     - "構造（親子）は MANIFEST の parent が正本（番号に意味を載せ過ぎない）"
+
 files:
   - id: "DCT.81.001"
     path: "ssot/dict/8100_terms_control.md"
@@ -16,7 +17,7 @@ files:
     title: "DICT Terms Control（用語統制：草案）"
     keywords: []
     status: "active"
-    parent: null
+    parent: "DCT.80.001"
     owner_ref: "OWN.UNASSIGNED"
 
   - id: "META.00.001"
@@ -25,15 +26,16 @@ files:
     title: "意図→参照ファイルのルータ"
     keywords: ["router", "intent", "triggers", "default_read"]
     status: "active"
-    parent: null
+    parent: "META.10.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "META.00.002"
     path: "ssot/MANIFEST.yml"
     domain: "META"
     title: "全ファイル台帳"
     keywords: ["manifest", "files", "keywords"]
     status: "active"
-    parent: null
+    parent: "META.10.001"
     owner_ref: "OWN.UNASSIGNED"
 
   - id: "OPS.00.000"
@@ -42,47 +44,52 @@ files:
     title: "憲法（North Star / 参照 / 変更フロー）"
     keywords: ["north star", "ssot", "参照", "採番", "禁止", "例外"]
     status: "active"
-    parent: null
+    parent: "OPS.11.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "OPS.00.001"
     path: "ssot/ops/0001_workstream.yml"
     domain: "OPS"
     title: "Workstream Beacon（現在モード固定）"
     keywords: ["workstream", "mode", "設定整理", "drift"]
     status: "active"
-    parent: null
+    parent: "OPS.11.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "OPS.00.002"
     path: "ssot/ops/0002_context.md"
     domain: "OPS"
     title: "Project Context（経緯・分離・現在モード）"
     keywords: ["context", "rationale", "分離運用", "設定整理"]
     status: "active"
-    parent: null
+    parent: "OPS.11.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "OPS.00.003"
     path: "ssot/ops/0003_change_protocol.md"
     domain: "OPS"
     title: "Change Protocol (ssot_organize)"
     keywords: []
     status: "active"
-    parent: null
+    parent: "OPS.12.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "OPS.00.004"
     path: "ssot/ops/0004_release_protocol.md"
     domain: "OPS"
     title: "Release Protocol (SSoT snapshots)"
     keywords: []
     status: "active"
-    parent: null
+    parent: "OPS.12.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "OPS.00.031"
     path: "ssot/ops/0031_lint_rules.md"
     domain: "OPS"
     title: "Lint Rules"
     keywords: ["lint", "rules"]
     status: "active"
-    parent: null
+    parent: "OPS.11.001"
     owner_ref: "OWN.UNASSIGNED"
 
   - id: "REG.01.001"
@@ -93,29 +100,32 @@ files:
     status: "active"
     parent: null
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "SYS.01.001"
     path: "ssot/system/spec/core_pillars.md"
     domain: "SYS"
     title: "Gameplay Core Pillars（ゲーム設計の軸）"
     keywords: ["pillars", "constraints", "gameplay"]
     status: "active"
-    parent: null
+    parent: "SYS.11.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "CHR.01.001"
     path: "ssot/char/templates/character_sheet.md"
     domain: "CHR"
     title: "Character Sheet Template（キャラ設定テンプレ）"
     keywords: ["character", "template", "sheet"]
     status: "active"
-    parent: null
+    parent: "CHR.10.001"
     owner_ref: "OWN.UNASSIGNED"
+
   - id: "CHR.02.001"
     path: "ssot/char/spec/invariants.md"
     domain: "CHR"
     title: "Character Invariants（キャラ不変条件チェック）"
     keywords: ["character", "invariants", "consistency", "checklist"]
     status: "active"
-    parent: null
+    parent: "CHR.10.001"
     owner_ref: "OWN.UNASSIGNED"
 
   - id: "META.10.001"
