@@ -1,55 +1,120 @@
-version: 1
+version: 2
+id_spec:
+  scheme: "DOMAIN.(CC.){1..N}LLL"
+  category_width: 2
+  leaf_width: 3
+  domains: ["OPS","REG","SYS","WLD","CHR","ITM","LOR","DCT","LEG","META"]
+  allocation_rules:
+    - "IDは一度発行したら再利用しない（欠番は欠番のまま）"
+    - "ops配下の数値ファイル(0000_...)は leaf=下3桁 を採用"
+    - "非数値ファイルは同一カテゴリ内で採番順に leaf を割当（後から挿入しない）"
+    - "構造（親子）は MANIFEST の parent が正本（番号に意味を載せ過ぎない）"
 files:
-  - path: "ssot/dict/8100_terms_control.md"
-    domain: "DICT"
+  - id: "DCT.81.001"
+    path: "ssot/dict/8100_terms_control.md"
+    domain: "DCT"
     title: "DICT Terms Control（用語統制：草案）"
     keywords: []
-  - path: "ssot/ROUTER.yml"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "META.00.901"
+    path: "ssot/ROUTER.yml"
     domain: "META"
     title: "意図→参照ファイルのルータ"
     keywords: ["router", "intent", "triggers", "default_read"]
-  - path: "ssot/MANIFEST.yml"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "META.00.902"
+    path: "ssot/MANIFEST.yml"
     domain: "META"
     title: "全ファイル台帳"
     keywords: ["manifest", "files", "keywords"]
-  - path: "ssot/ops/0000_constitution.md"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
+  - id: "OPS.00.000"
+    path: "ssot/ops/0000_constitution.md"
     domain: "OPS"
     title: "憲法（North Star / 参照 / 変更フロー）"
     keywords: ["north star", "ssot", "参照", "採番", "禁止", "例外"]
-  - path: "ssot/ops/0001_workstream.yml"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "OPS.00.001"
+    path: "ssot/ops/0001_workstream.yml"
     domain: "OPS"
     title: "Workstream Beacon（現在モード固定）"
     keywords: ["workstream", "mode", "設定整理", "drift"]
-  - path: "ssot/ops/0002_context.md"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "OPS.00.002"
+    path: "ssot/ops/0002_context.md"
     domain: "OPS"
     title: "Project Context（経緯・分離・現在モード）"
     keywords: ["context", "rationale", "分離運用", "設定整理"]
-  - path: "ssot/ops/0003_change_protocol.md"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "OPS.00.003"
+    path: "ssot/ops/0003_change_protocol.md"
     domain: "OPS"
     title: "Change Protocol (ssot_organize)"
     keywords: []
-  - path: "ssot/ops/0004_release_protocol.md"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "OPS.00.004"
+    path: "ssot/ops/0004_release_protocol.md"
     domain: "OPS"
     title: "Release Protocol (SSoT snapshots)"
     keywords: []
-  - path: "ssot/ops/0031_lint_rules.md"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "OPS.00.031"
+    path: "ssot/ops/0031_lint_rules.md"
     domain: "OPS"
     title: "Lint Rules"
     keywords: ["lint", "rules"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
 
-  - path: "ssot/registry/open_questions.md"
-    domain: "OPS"
+  - id: "REG.01.901"
+    path: "ssot/registry/open_questions.md"
+    domain: "REG"
     title: "Open Questions Registry（未確定台帳）"
     keywords: ["unknowns", "assumptions", "decisions", "open questions", "registry"]
-  - path: "ssot/system/spec/core_pillars.md"
-    domain: "SYSTEM"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "SYS.01.901"
+    path: "ssot/system/spec/core_pillars.md"
+    domain: "SYS"
     title: "Gameplay Core Pillars（ゲーム設計の軸）"
     keywords: ["pillars", "constraints", "gameplay"]
-  - path: "ssot/char/templates/character_sheet.md"
-    domain: "CHAR"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "CHR.01.901"
+    path: "ssot/char/templates/character_sheet.md"
+    domain: "CHR"
     title: "Character Sheet Template（キャラ設定テンプレ）"
     keywords: ["character", "template", "sheet"]
-  - path: "ssot/char/spec/invariants.md"
-    domain: "CHAR"
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+  - id: "CHR.02.901"
+    path: "ssot/char/spec/invariants.md"
+    domain: "CHR"
     title: "Character Invariants（キャラ不変条件チェック）"
     keywords: ["character", "invariants", "consistency", "checklist"]
+    status: "active"
+    parent: null
+    owner_ref: "OWN.UNASSIGNED"
+
